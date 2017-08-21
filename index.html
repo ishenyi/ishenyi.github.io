@@ -170,6 +170,201 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-wifi-src-sharon" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文是作者原创，非利益相关，转载请注明出处。</p>
+<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>不知不觉在微信里加了好几个安全领域的群，偶尔关注安全圈的动态，关注下安全界的大佬。<br>于是在 2017-8-19 收到 wifi 万能钥匙线下沙龙的邀请，就决定去面基。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-e99a0c9d9163590e.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IMG_0336.JPG"></p>
+<p>果然这是一场非常棒的安全沙龙大趴。地点在世博园楼顶的一个小型高尔夫球场基地里，现场有大佬，有美女，所以人员爆满。都是来看安全圈程序员鼓励师的吧。签到的小礼物、茶歇的果汁点心、以及抽奖，都能看出主办方的贴心之处。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-6b14550e459934c5.JPG!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="一、沙龙简介"><a href="#一、沙龙简介" class="headerlink" title="一、沙龙简介"></a>一、沙龙简介</h2><p>这次沙龙的主题是：一起做点有型的事情。</p>
+<p><a href="http://mp.weixin.qq.com/s/8UAzjQ7Amkf8bu225MDm8g" target="_blank" rel="external">http://mp.weixin.qq.com/s/8UAzjQ7Amkf8bu225MDm8g</a></p>
+<p>一共有3场分享:<br>渗透测试之端详的艺术——四爷 安识科技</p>
+<p>AndroId安全防护——龚沛华 wifi安全研究原</p>
+<p>DDos平台与botnet对抗——zhulijun</p>
+<h2 id="二、讲座内容"><a href="#二、讲座内容" class="headerlink" title="二、讲座内容"></a>二、讲座内容</h2><h3 id="《渗透测试之端详的艺术》"><a href="#《渗透测试之端详的艺术》" class="headerlink" title="《渗透测试之端详的艺术》"></a><strong>《渗透测试之端详的艺术》</strong></h3><p>端详这个词用的巧妙，算是这个行业的专业名词，如果你想让别人觉得你在安全领域很专业，那这个词就比较有代表性。</p>
+<p>关于如何端详，四爷提到以下2点：</p>
+<p>从运营监控入手，zabbix、nagios、cacti、jenkins不同的不版本存在不同的漏洞。已知的公开漏洞如果配置不当很容易被利用。</p>
+<p>上周，<a href="http://www.freebuf.com/articles/terminal/144842.html" target="_blank" rel="external">http://www.freebuf.com/articles/terminal/144842.html</a>  xshell这个工具也爆出了漏洞。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-7a96f1836b1ef3db.JPG!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>从协助工具入手，jira、confluence、redmine、mantis这些文档工具，如果直接把vpn地址记录在上面，再加上弱密码就可以直接一环一环的突破内网了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-1e87cb0ddaed47b3.JPG!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>邮件也是很好的攻破途径，《高屋建瓴之WebMail攻与防》</p>
+<p><a href="http://m.bobao.360.cn/learning/detail/115.html" target="_blank" rel="external">http://m.bobao.360.cn/learning/detail/115.html</a></p>
+<p>这个文章依然很经典。安全圈的文章都很有特点，喜欢用16进制码写标题。</p>
+<p>这些工具我们只是日常使用，没有考虑过安全性。所谓“没有端详不破的，没有防护不住的”，以此警戒内网渗透。</p>
+<p>Q&amp;A 环节我记录了几个问题</p>
+<p>亲自动手实践无疑是最佳的成长途径，由于相关法规的完善，目前最佳的方法是自己搭建虚拟机来实践漏洞，而不能未经授权直接挖漏洞。</p>
+<p>端详可以自己开发检测脚本，周期性自动化完成这些工作。</p>
+<p>内网安全在得不到重视的情况下，只能通过技术来征服某些人员</p>
+<h3 id="《android安全防护》"><a href="#《android安全防护》" class="headerlink" title="《android安全防护》"></a><strong>《android安全防护》</strong></h3><p>狸猫换太子的故事一直在安卓软件安全领域发生</p>
+<p>这让我想起了很多安全软件借着免广告对原版apk进行二次打包，绑定自动扣费软件，这样的黑产月薪百万。可靠数据一个月173万，带名带姓带手机号。</p>
+<p>一般apk二次打包的手法是这样的</p>
+<p>oncreate方法增加启动执行入口，，然后开始下载恶意母体，下载广播接收器，初始化自动扣费接口，接着手机root提权，检测是否安装安全软件，安装的话kill掉。然后执行文件。</p>
+<p>如何应对和防护。加壳、混淆、完整性校验、反调试占坑、内存dump分布式还原，代码片段存储。对抗脱壳器，增加无效代码，自动退出。</p>
+<p>这里面有个很有趣的问题，也是安全领域典型的问题。就是矛与盾的问题。</p>
+<p>app开发者，写防护代码增加反编译成本和难度<br>黑客拿原app脱壳逆向工程，重新二次打包，伪装。<br>app开发者脱壳被hack’的apk，再分析黑客，追踪黑产服务，渗透黑产的服务器<br>…….</p>
+<p>正式魔高一尺，道高一丈。</p>
+<h3 id="《DDos平台与botnet对抗》"><a href="#《DDos平台与botnet对抗》" class="headerlink" title="《DDos平台与botnet对抗》"></a><strong>《DDos平台与botnet对抗》</strong></h3><p>行业状况:</p>
+<p>目前分享者的抗ddos的平台2014年就达到了抗1T的量，并且ddos检测不是通过阀值来检测。而是通过网络频谱特征主动探测，可以发现45%1min以内的小流量ddos。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-0ddbaa204e055bda.JPG!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>分享者比较牛逼的地方是反制，通过多个清洗步骤发现C&amp;C主控服务器，然后渗透主控服务器。什么概念呢？就是黑客控制“肉鸡”，而白帽大神控制黑客的主机。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-e0c5a548f5e7cd88.JPG!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>通过HFS 2.3x命令注入漏洞，或Gh0st变种成功率非常高。</p>
+<p>游戏案例，通过游戏加速平台，清洗流量，同时只动态暴露节点，方便切换。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-6f31669e22d25dc7.JPG!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>223CC攻击案例</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-ae4d995b0ece51e7.JPG!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>关于这个作恶的cc域名，我简单搜索了一下就找到了这篇文章<br><a href="http://blog.csdn.net/qq_35440678/article/details/52713999" target="_blank" rel="external">http://blog.csdn.net/qq_35440678/article/details/52713999</a></p>
+<p>所以魔高一尺，道高一丈</p>
+<h2 id="三、小结"><a href="#三、小结" class="headerlink" title="三、小结"></a>三、小结</h2><p>沙龙最后环节是教打高尔夫球。感谢主办方，这是一场很棒的线下活动。</p>
+<p>总结下，安全问题重要性不言而喻。作为不是吃安全这碗饭的跨界人士，想要全栈，安全也是必须了解或掌握的一项技能。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-d77584ca3c1528fc.JPG!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2189705-e9c6bd9f6e83cde7.JPG!thumbnail?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/21/wifi-src-sharon/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-“angular-vs-vue”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/03/“angular-vs-vue”/">“angular.vs.vue围观有感”</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/03/“angular-vs-vue”/" class="archive-article-date">
+  	<time datetime="2017-08-03T15:35:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文不是想凑热闹，我只是想从我的角度讲讲前端圈的互怼事件。<br>
+        
+          <a class="article-more-a" href="/2017/08/03/“angular-vs-vue”/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">闲谈</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Angular</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/日记/" class="article-tag-list-link color3">日记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/03/“angular-vs-vue”/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jing-yi-tutoria" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -353,6 +548,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">精益，不确定性</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">闲谈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>
